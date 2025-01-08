@@ -100,4 +100,4 @@ const square = createExpFunc(2);
 
 // Timers
 
-setTimeout(getBookId, 1000);
+setInterval((() => fib.next)(), 1000);

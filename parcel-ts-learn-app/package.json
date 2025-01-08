@@ -1,0 +1,22 @@
+{
+  "name": "parcel-ts-learn-app",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.ts",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.html",
+    "dev": "pnpm parcel src/index.html",
+    "lint": "eslint",
+    "check": "tsc --noEmit",
+    "ci": "pnpm build && pnpm test && pnpm lint && pnpm check"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.3"
+  }
+}

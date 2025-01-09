@@ -1,29 +1,9 @@
 {
-  "users": [
-    {
-      "id": "3534",
-      "name": "A name",
-      "age": 32
-    },
-    {
-      "id": "44c6",
-      "name": "A name",
-      "age": 32
-    },
-    {
-      "id": "54e2",
-      "name": "A name",
-      "age": 32
-    },
-    {
-      "id": "0bd0",
-      "name": "A name",
-      "age": 32
-    },
-    {
-      "id": "c83e",
-      "name": "A name",
-      "age": 32
-    }
-  ]
+    "users": [
+        {
+            "id": "3534",
+            "name": "A name",
+            "age": 32
+        }
+    ]
 }

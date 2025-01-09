@@ -1,7 +1,9 @@
 import { dbHost } from '../../env-config';
 
 interface UserProps {
-    [key: string]: string | number;
+    id: string;
+    name: string;
+    age: number;
 }
 
 type Callback = () => void;
@@ -10,7 +12,7 @@ export class User {
     private data: UserProps;
     events: { [key: string]: Callback[] } = {};
 
-    constructor(data: UserProps = {}) {
+    constructor(data: UserProps) {
         this.data = data;
     }
     get<K extends keyof UserProps>(propName: K): UserProps[K] {
@@ -59,15 +61,52 @@ export class User {
                 );
             });
     }
-    save(user: UserProps): void {
-        const id = this.get('id');
-        if (id) {
-            fetch(`${dbHost}/${id}`, {
+    addOrUpdate(user: UserProps): void {
+        console.log(this.get('id'));
+        if (this.get('id') === user.id) {
+            fetch(`${dbHost}/${this.get('id')}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(user)
-            });
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(
+                            `HTTP error! Status: ${response.status}`
+                        );
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log('Updated user:', data);
+                })
+                .catch((error) => {
+                    console.error(
+                        'There has been a problem with your fetch operation:',
+                        error
+                    );
+                });
         } else {
+            fetch(`${dbHost}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(user)
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log('User added:', data);
+                })
+                .catch((error) => {
+                    console.error(
+                        'There has been a problem with your fetch operation:',
+                        error
+                    );
+                });
         }
     }
 }

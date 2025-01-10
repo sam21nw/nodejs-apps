@@ -1,30 +1,29 @@
 {
-    "name": "web-framework",
+    "name": "list-app",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev:start": "parcel index.html",
         "dev:db": "json-server -w db.json",
-        "dev": "start npm run dev:start && start npm run dev:db",
+        "dev:app": "parcel index.html",
+        "dev": "start pnpm run dev:app && start pnpm run dev:db",
         "clean": "rm -rf dist"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "buffer": "^6.0.3",
-        "crypto-browserify": "^3.12.1",
+        "buffer": "^5.5.0||^6.0.0",
+        "crypto-browserify": "^3.12.0",
         "dotenv": "^16.4.7",
-        "events": "^3.3.0",
+        "events": "^3.1.0",
         "os-browserify": "^0.3.0",
         "parcel": "^2.13.3",
-        "path-browserify": "^1.0.1",
+        "path-browserify": "^1.0.0",
         "process": "^0.11.10",
         "stream-browserify": "^3.0.0",
         "string_decoder": "^1.3.0",
-        "typescript": "^5.7.2",
+        "typescript": "^5.7.3",
         "vm-browserify": "^1.1.2"
     },
     "dependencies": {

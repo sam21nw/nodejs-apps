@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "body": "list body one",
+      "completed": true
+    },
+    {
+      "id": 2,
+      "body": "list body two",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "body": "list body three",
+      "completed": true
+    },
+    {
+      "id": 4,
+      "body": "list body four",
+      "completed": false
+    }
+  ]
+}

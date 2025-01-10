@@ -1,0 +1,138 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.newItemEntry {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.newItemEntry__form {
+    display: flex;
+    align-items: center;
+    flex-wrap: flex-start;
+    flex-direction: row;
+}
+
+.newItemEntry__label {
+    width: 50%;
+    white-space: nowrap;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.newItemEntry__input {
+    display: flex;
+    width: 90%;
+    white-space: nowrap;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.newItemEntry__input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.newItemEntry__button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.newItemEntry__button:hover {
+    background-color: #0056b3;
+}
+
+.listContainer {
+    padding: 16px;
+}
+
+.listTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listTitle h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.listTitle__button {
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.listTitle__button:hover {
+    background-color: #c82333;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li.item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+li.item:last-child {
+    border-bottom: none;
+}
+
+li.item input[type="checkbox"] {
+    margin-right: 12px;
+}
+
+li.item label {
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+li.item button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+li.item button:hover {
+    background-color: #c82333;
+}

@@ -18,13 +18,11 @@ export class FullList {
     }
     addOrUpdate(itemObj: Item): void {
         const index = this._list.findIndex((item) => item.id === itemObj.id);
-
         if (index !== -1) {
             this._list[index] = itemObj;
         } else {
             this._list.push(itemObj);
         }
-
         this.save();
     }
 
@@ -33,7 +31,7 @@ export class FullList {
         console.log(`Item in local storage with id:${id} removed.`);
         this.save();
     }
-    clearList(): void {
+    clear(): void {
         this._list = [];
         this.save();
     }
